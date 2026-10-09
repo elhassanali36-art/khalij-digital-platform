@@ -146,34 +146,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 })();`,
       }}
     />
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-window.addEventListener("error", function (e) {
-  var t = "JSERR: " + (e.message || "").slice(0, 150) + " @" + (e.filename || "").split("/").pop() + ":" + e.lineno;
-  document.title = t;
-  try { var d = document.createElement("div"); d.id = "diag"; d.style.cssText = "position:fixed;top:0;right:0;left:0;background:red;color:#fff;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-});
-window.addEventListener("unhandledrejection", function (e) {
-  var t = "REJECT: " + String(e.reason).slice(0, 150);
-  document.title = t;
-  try { var d = document.createElement("div"); d.id = "diag2"; d.style.cssText = "position:fixed;top:30px;right:0;left:0;background:darkred;color:#fff;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-});
-setTimeout(function () {
-  if (!window.__khalijBridge) {
-    var t = "NO BRIDGE INSTALLED";
-    document.title = t;
-    try { var d = document.createElement("div"); d.id = "diag3"; d.style.cssText = "position:fixed;top:60px;right:0;left:0;background:orange;color:#000;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-  } else {
-    var t2 = "BRIDGE OK, fetch=" + (typeof window.fetch);
-    document.title = t2;
-    try { var d2 = document.createElement("div"); d2.id = "diag4"; d2.style.cssText = "position:fixed;top:60px;right:0;left:0;background:teal;color:#fff;z-index:99999;padding:8px;font-size:12px"; d2.textContent = t2; document.body.appendChild(d2); } catch (err) {}
-  }
-}, 4000);
-`,
-      }}
-    />
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+            <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
             <Link href="/" className="flex shrink-0 items-center gap-2 text-xl font-extrabold">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-slate-950 font-bold">

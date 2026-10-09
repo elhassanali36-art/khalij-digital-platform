@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-d:"/khalij-digital-platform/_next/static/chunks/27gjg8e11zukd.js"
-e:I[68027,["$d"],"default",1]
+c:"/khalij-digital-platform/_next/static/chunks/27gjg8e11zukd.js"
+d:I[68027,["$c"],"default",1]
 :HL["/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","style"]
 2:T108e,(function () {
   if (window.__khalijBridge) return;
@@ -108,52 +108,29 @@ e:I[68027,["$d"],"default",1]
       alert("لا يوجد ملف متاح لهذا المنتج");
     } catch (e) { alert("تعذر تحميل المنتج"); }
   };
-})();9:X
-a:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$Lb","p":false,"v":null}}]]
-7:[["children",{"s":"/_not-found","h":512,"d":{"r":"$L8","p":false,"v":"$9"},"c":"$Qa"}]]
-0:{"P":null,"c":["","_not-found",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/khalij-digital-platform/_next/static/chunks/27gjg8e11zukd.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5","$L6"]}]}]]}],"p":false,"v":null},"c":"$Q7"},"h":{"r":"$Lc","p":false,"v":null}},"m":"$undefined","G":["$e",["$Lf"]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ZppN1W6-iC0Rzq-EXM3d2"}
-11:I[22016,["$d"],""]
-12:I[39756,["$d"],"default"]
-13:"/khalij-digital-platform/_next/static/chunks/3ubgqh20klx6d.js"
-14:I[58298,["$d","$13"],"default"]
-15:I[37457,["$d"],"default"]
-16:I[97367,["$d"],"OutletBoundary"]
-17:"$Sreact.suspense"
-19:"ViewportBoundary"
-1a:I[97367,["$d"],"$19"]
-1c:"MetadataBoundary"
-1d:I[97367,["$d"],"$1c"]
-10:T63c,
-window.addEventListener("error", function (e) {
-  var t = "JSERR: " + (e.message || "").slice(0, 150) + " @" + (e.filename || "").split("/").pop() + ":" + e.lineno;
-  document.title = t;
-  try { var d = document.createElement("div"); d.id = "diag"; d.style.cssText = "position:fixed;top:0;right:0;left:0;background:red;color:#fff;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-});
-window.addEventListener("unhandledrejection", function (e) {
-  var t = "REJECT: " + String(e.reason).slice(0, 150);
-  document.title = t;
-  try { var d = document.createElement("div"); d.id = "diag2"; d.style.cssText = "position:fixed;top:30px;right:0;left:0;background:darkred;color:#fff;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-});
-setTimeout(function () {
-  if (!window.__khalijBridge) {
-    var t = "NO BRIDGE INSTALLED";
-    document.title = t;
-    try { var d = document.createElement("div"); d.id = "diag3"; d.style.cssText = "position:fixed;top:60px;right:0;left:0;background:orange;color:#000;z-index:99999;padding:8px;font-size:12px"; d.textContent = t; document.body.appendChild(d); } catch (err) {}
-  } else {
-    var t2 = "BRIDGE OK, fetch=" + (typeof window.fetch);
-    document.title = t2;
-    try { var d2 = document.createElement("div"); d2.id = "diag4"; d2.style.cssText = "position:fixed;top:60px;right:0;left:0;background:teal;color:#fff;z-index:99999;padding:8px;font-size:12px"; d2.textContent = t2; document.body.appendChild(d2); } catch (err) {}
-  }
-}, 4000);
-3:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$10"}}]
-4:["$","header",null,{"className":"sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3","children":[["$","$L11",null,{"href":"/","className":"flex shrink-0 items-center gap-2 text-xl font-extrabold","children":[["$","span",null,{"className":"flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-slate-950 font-bold","children":"خ"}],["$","span",null,{"children":["منصة",["$","span",null,{"className":"text-amber-400","children":"الخليج"}]]}]]}],["$","nav",null,{"className":"flex max-w-full items-center gap-1 overflow-x-auto whitespace-nowrap pb-1 text-sm font-medium sm:gap-2 sm:pb-0","children":[["$","$L11",null,{"href":"/","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"المتجر"}],["$","$L11",null,{"href":"/dashboard","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"لوحة البائع"}],["$","$L11",null,{"href":"/register","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"حساب بائع"}],["$","$L11",null,{"href":"/sell","className":"rounded-lg bg-gradient-to-l from-amber-400 to-orange-500 px-4 py-2 font-bold text-slate-950 transition hover:opacity-90","children":"+ ابدأ البيع"}]]}]]}]}]
-5:["$","$L12",null,{"parallelRouterKey":"children","error":"$14","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/khalij-digital-platform/_next/static/chunks/3ubgqh20klx6d.js","async":true,"nonce":"$undefined"}]],"template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
-6:["$","footer",null,{"className":"border-t border-white/10 py-8 text-center text-sm text-slate-500","children":["$","p",null,{"children":"منصة الخليج للمنتجات الرقمية — بيع أعمالك الرقمية واستقبل أرباحك مباشرة بـ PayPal والعملات الرقمية"}]}]
-8:["$","$1","c",{"children":[null,["$","$L12",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
-b:["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$5:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$5:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$5:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$5:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L16",null,{"children":["$","$17",null,{"name":"Next.MetadataOutlet","children":"$@18"}]}]]}]
-c:["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L1a",null,{"children":"$L1b"}],["$","$L1d",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$17",null,{"name":"Next.Metadata","children":"$L1e"}]}],null]}],null]}]
-f:["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-9:C
-1b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-18:null
-1e:[["$","title","0",{"children":"منصة الخليج للمنتجات الرقمية"}],["$","meta","1",{"name":"description","content":"منصة عربية لبيع المنتجات الرقمية مع قبول PayPal والعملات الرقمية ومشاركة المتاجر والمنتجات بسهولة."}],["$","meta","2",{"property":"og:title","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","3",{"property":"og:description","content":"اكتشف وشارك أفضل المنتجات الرقمية من البائعين العرب."}],["$","meta","4",{"property":"og:site_name","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","5",{"property":"og:locale","content":"ar_AR"}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","8",{"name":"twitter:title","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","9",{"name":"twitter:description","content":"اكتشف وشارك أفضل المنتجات الرقمية من البائعين العرب."}]]
+})();8:X
+9:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$La","p":false,"v":null}}]]
+6:[["children",{"s":"/_not-found","h":512,"d":{"r":"$L7","p":false,"v":"$8"},"c":"$Q9"}]]
+0:{"P":null,"c":["","_not-found",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/khalij-digital-platform/_next/static/chunks/27gjg8e11zukd.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$Lb","p":false,"v":null}},"m":"$undefined","G":["$d",["$Le"]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"LHMal8aTTfZNsLDH-C1KJ"}
+f:I[22016,["$c"],""]
+10:I[39756,["$c"],"default"]
+11:"/khalij-digital-platform/_next/static/chunks/3ubgqh20klx6d.js"
+12:I[58298,["$c","$11"],"default"]
+13:I[37457,["$c"],"default"]
+14:I[97367,["$c"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$c"],"$17"]
+1a:"MetadataBoundary"
+1b:I[97367,["$c"],"$1a"]
+3:["$","header",null,{"className":"sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3","children":[["$","$Lf",null,{"href":"/","className":"flex shrink-0 items-center gap-2 text-xl font-extrabold","children":[["$","span",null,{"className":"flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-slate-950 font-bold","children":"خ"}],["$","span",null,{"children":["منصة",["$","span",null,{"className":"text-amber-400","children":"الخليج"}]]}]]}],["$","nav",null,{"className":"flex max-w-full items-center gap-1 overflow-x-auto whitespace-nowrap pb-1 text-sm font-medium sm:gap-2 sm:pb-0","children":[["$","$Lf",null,{"href":"/","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"المتجر"}],["$","$Lf",null,{"href":"/dashboard","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"لوحة البائع"}],["$","$Lf",null,{"href":"/register","className":"rounded-lg px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white","children":"حساب بائع"}],["$","$Lf",null,{"href":"/sell","className":"rounded-lg bg-gradient-to-l from-amber-400 to-orange-500 px-4 py-2 font-bold text-slate-950 transition hover:opacity-90","children":"+ ابدأ البيع"}]]}]]}]}]
+4:["$","$L10",null,{"parallelRouterKey":"children","error":"$12","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/khalij-digital-platform/_next/static/chunks/3ubgqh20klx6d.js","async":true,"nonce":"$undefined"}]],"template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
+5:["$","footer",null,{"className":"border-t border-white/10 py-8 text-center text-sm text-slate-500","children":["$","p",null,{"children":"منصة الخليج للمنتجات الرقمية — بيع أعمالك الرقمية واستقبل أرباحك مباشرة بـ PayPal والعملات الرقمية"}]}]
+7:["$","$1","c",{"children":[null,["$","$L10",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$4:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$4:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$4:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$4:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}]
+b:["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L18",null,{"children":"$L19"}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1c"}]}],null]}],null]}]
+e:["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+8:C
+19:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+16:null
+1c:[["$","title","0",{"children":"منصة الخليج للمنتجات الرقمية"}],["$","meta","1",{"name":"description","content":"منصة عربية لبيع المنتجات الرقمية مع قبول PayPal والعملات الرقمية ومشاركة المتاجر والمنتجات بسهولة."}],["$","meta","2",{"property":"og:title","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","3",{"property":"og:description","content":"اكتشف وشارك أفضل المنتجات الرقمية من البائعين العرب."}],["$","meta","4",{"property":"og:site_name","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","5",{"property":"og:locale","content":"ar_AR"}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","8",{"name":"twitter:title","content":"منصة الخليج للمنتجات الرقمية"}],["$","meta","9",{"name":"twitter:description","content":"اكتشف وشارك أفضل المنتجات الرقمية من البائعين العرب."}]]
