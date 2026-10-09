@@ -107,7 +107,7 @@ export default function EditSellerProfilePage() {
       if (!res.ok) throw new Error(data.error ?? "تعذر حفظ التعديلات");
       setSuccess("✅ تم تحديث متجرك وروابطك بنجاح");
       setSellerId(data.id);
-      setTimeout(() => router.push(`/sellers/${data.id}`), 900);
+      setTimeout(() => router.push(`/sellers/view?id=${data.id}`), 900);
     } catch (err) {
       setError(err instanceof Error ? err.message : "تعذر حفظ التعديلات");
       setSaving(false);
@@ -136,7 +136,7 @@ export default function EditSellerProfilePage() {
           <h1 className="text-3xl font-extrabold">⚙️ تعديل متجري</h1>
           <p className="mt-2 text-slate-400">حدّث هويتك وروابط التواصل ووسائل استلام الأرباح.</p>
         </div>
-        {sellerId && <Link href={`/sellers/${sellerId}`} className="text-sm text-amber-400 underline">عرض متجري ←</Link>}
+        {sellerId && <Link href={`/sellers/view?id=${sellerId}`} className="text-sm text-amber-400 underline">عرض متجري ←</Link>}
       </div>
 
       <form onSubmit={submit} className="mt-8 space-y-8">

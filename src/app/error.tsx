@@ -31,7 +31,7 @@ export default function GlobalError({
             إعادة المحاولة
           </button>
           <a
-            href="/api/health"
+            href="https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijApi"
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-white/15 px-5 py-3 font-bold text-slate-200"

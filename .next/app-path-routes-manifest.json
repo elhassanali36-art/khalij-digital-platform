@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/catalog/page": "/admin/catalog",
+  "/admin/page": "/admin",
+  "/checkout/page": "/checkout",
+  "/dashboard/page": "/dashboard",
+  "/page": "/",
+  "/products/edit/page": "/products/edit",
+  "/products/view/page": "/products/view",
+  "/profile/edit/page": "/profile/edit",
+  "/register/page": "/register",
+  "/sell/page": "/sell",
+  "/sellers/view/page": "/sellers/view"
+}

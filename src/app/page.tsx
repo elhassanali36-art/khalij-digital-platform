@@ -1,70 +1,37 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { desc, eq } from "drizzle-orm";
-import { db } from "@/db";
-import { products, sellers } from "@/db/schema";
 
-export const dynamic = "force-dynamic";
+type StoreProduct = {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  priceUsd: number;
+  coverEmoji: string;
+  coverColor: string;
+  sellerName: string;
+  sellerAvatar: string;
+  sellerAccepts: { paypal: boolean; btc: boolean; eth: boolean; usdt: boolean };
+};
 
-async function loadStoreProducts() {
-  return db
-    .select({
-      product: {
-        id: products.id,
-        title: products.title,
-        description: products.description,
-        category: products.category,
-        priceUsd: products.priceUsd,
-        coverEmoji: products.coverEmoji,
-        coverColor: products.coverColor,
-      },
-      seller: {
-        name: sellers.name,
-        avatarEmoji: sellers.avatarEmoji,
-        paypalEmail: sellers.paypalEmail,
-        walletBtc: sellers.walletBtc,
-        walletEth: sellers.walletEth,
-        walletUsdt: sellers.walletUsdt,
-      },
-    })
-    .from(products)
-    .innerJoin(sellers, eq(products.sellerId, sellers.id))
-    .where(eq(sellers.storeStatus, "active"))
-    .orderBy(desc(products.createdAt));
-}
+export default function HomePage() {
+  const [rows, setRows] = useState<StoreProduct[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
-export default async function HomePage() {
-  let rows: Awaited<ReturnType<typeof loadStoreProducts>> = [];
-  let databaseError = false;
-
-  try {
-    rows = await loadStoreProducts();
-  } catch (error) {
-    databaseError = true;
-    console.error("Store database connection failed", error);
+  useEffect(() => {
+    fetch("/api/products")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((d) => { setRows(Array.isArray(d) ? d : []); setLoaded(true); })
+      .catch(() => setLoaded(true));
+  }, []);
+  if (!loaded) {
+    return <main className="mx-auto max-w-6xl px-4 py-20 text-center text-slate-400">جارٍ تحميل المتجر…</main>;
   }
 
   return (
     <main>
-      {databaseError && (
-        <section className="border-b border-red-400/20 bg-red-500/10 px-4 py-4">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-sm">
-            <div>
-              <b className="text-red-300">⚠️ تعذر الاتصال بقاعدة البيانات</b>
-              <p className="mt-1 text-slate-300">
-                راجع DATABASE_URL وشغّل ملف database-setup.sql الأخير في Supabase.
-              </p>
-            </div>
-            <a
-              href="/api/health"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-lg border border-red-300/30 px-4 py-2 font-bold text-red-200 hover:bg-red-400/10"
-            >
-              عرض تشخيص الاتصال
-            </a>
-          </div>
-        </section>
-      )}
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
@@ -113,66 +80,6 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Products */}
-      <section id="products" className="mx-auto max-w-6xl px-4 pb-20">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">🛍️ أحدث المنتجات</h2>
-          <span className="text-sm text-slate-400">{rows.length} منتج</span>
-        </div>
-
-        {rows.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-white/15 p-16 text-center text-slate-400">
-            لا توجد منتجات بعد — كن أول من يبيع!{" "}
-            <Link href="/register" className="text-amber-400 underline">
-              أنشئ حسابك الآن
-            </Link>
-          </div>
-        ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rows.map(({ product: p, seller: s }) => (
-              <Link
-                key={p.id}
-                href={`/products/${p.id}`}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:border-amber-400/40 hover:shadow-xl hover:shadow-amber-500/10"
-              >
-                <div
-                  className={`flex h-40 items-center justify-center bg-gradient-to-br ${p.coverColor} text-6xl transition group-hover:scale-105`}
-                >
-                  {p.coverEmoji}
-                </div>
-                <div className="p-5">
-                  <div className="mb-2 flex items-center gap-2 text-xs">
-                    <span className="rounded-full bg-white/10 px-2 py-0.5 text-slate-300">
-                      {p.category}
-                    </span>
-                    <span className="text-slate-500">
-                      {s.avatarEmoji} {s.name}
-                    </span>
-                  </div>
-                  <h3 className="line-clamp-1 text-lg font-bold group-hover:text-amber-300">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-slate-400">
-                    {p.description}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xl font-extrabold text-amber-400">
-                      ${Number(p.priceUsd).toFixed(2)}
-                    </span>
-                    <span className="flex gap-1 text-sm">
-                      {s.paypalEmail && <span title="PayPal" className="text-sky-400">💳</span>}
-                      {s.walletBtc && <span title="بيتكوين" className="text-orange-400">₿</span>}
-                      {s.walletEth && <span title="إيثيريوم" className="text-indigo-400">Ξ</span>}
-                      {s.walletUsdt && <span title="USDT" className="text-emerald-400">₮</span>}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
       </section>
 
       {/* How it works */}

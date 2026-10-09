@@ -98,8 +98,8 @@ export default function SellPage() {
       setError("اختر ملف المنتج أو أضف رابط تحميل خارجي");
       return;
     }
-    if (productFile && productFile.size > 500 * 1024 * 1024) {
-      setError("حجم الملف أكبر من الحد المسموح (500 ميجابايت)");
+    if (productFile && productFile.size > 3 * 1024 * 1024) {
+      setError("حجم الملف أكبر من حد الرفع المباشر (3 ميجابايت). استخدم رابطًا خارجيًا للملفات الأكبر");
       return;
     }
 
@@ -108,37 +108,31 @@ export default function SellPage() {
       let storagePath: string | null = null;
 
       if (productFile) {
-        setUploadStatus("1/3 جارٍ تجهيز رفع الملف…");
-        const signRes = await fetch("/api/uploads/sign", {
+        setUploadStatus("1/2 جارٍ رفع ملف المنتج إلى المنصة…");
+        const bytes = new Uint8Array(await productFile.arrayBuffer());
+        let binary = "";
+        const chunkSize = 0x8000;
+        for (let i = 0; i < bytes.length; i += chunkSize) {
+          binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+        }
+        const upRes = await fetch("/api/uploads/store", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             fileName: productFile.name,
             fileSize: productFile.size,
+            contentType: productFile.type || "application/octet-stream",
+            contentBase64: btoa(binary),
           }),
         });
-        const signed = await signRes.json();
-        if (!signRes.ok) {
-          throw new Error(signed.error ?? "تعذر تجهيز رفع الملف");
+        const upData = await upRes.json();
+        if (!upRes.ok) {
+          throw new Error(upData.error ?? "تعذر رفع الملف");
         }
-
-        setUploadStatus("2/3 جارٍ رفع ملف المنتج إلى التخزين الآمن…");
-        const uploadBody = new FormData();
-        uploadBody.append("cacheControl", "3600");
-        uploadBody.append("", productFile);
-        const uploadRes = await fetch(signed.signedUrl, {
-          method: "PUT",
-          headers: { "x-upsert": "false" },
-          body: uploadBody,
-        });
-        if (!uploadRes.ok) {
-          const uploadError = await uploadRes.text();
-          throw new Error(`تعذر رفع الملف: ${uploadError || uploadRes.statusText}`);
-        }
-        storagePath = signed.path;
+        storagePath = upData.path;
       }
 
-      setUploadStatus("3/3 جارٍ نشر المنتج…");
+      setUploadStatus("2/2 جارٍ نشر المنتج…");
       const res = await fetch("/api/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -153,7 +147,7 @@ export default function SellPage() {
       if (!res.ok) {
         throw new Error(data.error ?? "تعذر إنشاء المنتج");
       }
-      router.push(`/products/${data.id}`);
+      router.push(`/products/view?id=${data.id}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "تعذر الاتصال بالخادم");
       setUploadStatus("");
@@ -230,7 +224,7 @@ export default function SellPage() {
             تنشر باسم: <b className="text-amber-300">{seller.avatarEmoji} {seller.name}</b>
           </p>
         </div>
-        <Link href={`/sellers/${seller.id}`} className="text-sm text-amber-400 underline">
+        <Link href={`/sellers/view?id=${seller.id}`} className="text-sm text-amber-400 underline">
           ملفي الشخصي ←
         </Link>
       </div>

@@ -291,7 +291,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="flex gap-2">
                   <Link
-                    href={`/sellers/${sellerProfile.id}`}
+                    href={`/sellers/view?id=${sellerProfile.id}`}
                     className="rounded-xl border border-white/15 px-4 py-2 text-sm font-bold text-slate-200 hover:bg-white/5"
                   >
                     عرض المتجر
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                 <ShareButtons
                   title={`متجر ${sellerProfile.name} على منصة الخليج`}
                   text="اكتشف منتجاتي الرقمية"
-                  path={`/sellers/${sellerProfile.id}`}
+                  path={`/sellers/view?id=${sellerProfile.id}`}
                 />
               </div>
             </section>
@@ -436,7 +436,7 @@ export default function DashboardPage() {
                     key={p.id}
                     className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-amber-400/40"
                   >
-                    <Link href={`/products/${p.id}`} className="flex items-center gap-4 p-4">
+                    <Link href={`/products/view?id=${p.id}`} className="flex items-center gap-4 p-4">
                       <div
                         className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${p.coverColor} text-2xl`}
                       >
@@ -451,7 +451,7 @@ export default function DashboardPage() {
                     </Link>
                     <div className="flex flex-wrap items-center gap-2 border-t border-white/10 p-3">
                       <Link
-                        href={`/products/${p.id}/edit`}
+                        href={`/products/edit?id=${p.id}`}
                         className="rounded-lg border border-sky-400/20 bg-sky-500/10 px-3 py-2 text-sm font-bold text-sky-300 transition hover:bg-sky-500/20"
                       >
                         ✏️ تعديل
@@ -459,7 +459,7 @@ export default function DashboardPage() {
                       <ShareButtons
                         title={p.title}
                         text="منتج رقمي على منصة الخليج"
-                        path={`/products/${p.id}`}
+                        path={`/products/view?id=${p.id}`}
                         compact
                       />
                     </div>

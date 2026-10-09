@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/catalog/page": "app/admin/catalog/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js",
+  "/products/edit/page": "app/products/edit/page.js",
+  "/products/view/page": "app/products/view/page.js",
+  "/profile/edit/page": "app/profile/edit/page.js",
+  "/register/page": "app/register/page.js",
+  "/sell/page": "app/sell/page.js",
+  "/sellers/view/page": "app/sellers/view/page.js"
+}

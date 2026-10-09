@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import "./globals.css";
+import "@/lib/api-bridge";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||

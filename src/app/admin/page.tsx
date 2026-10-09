@@ -236,7 +236,7 @@ export default function AdminDashboardPage() {
             {filtered.map((store) => (
               <tr key={store.id} className="border-t border-white/5 align-top">
                 <td className="px-4 py-4">
-                  <Link href={`/sellers/${store.id}`} target="_blank" className="font-bold hover:text-amber-300">{store.avatarEmoji} {store.name}</Link>
+                  <Link href={`/sellers/view?id=${store.id}`} target="_blank" className="font-bold hover:text-amber-300">{store.avatarEmoji} {store.name}</Link>
                   <div dir="ltr" className="mt-1 text-left font-mono text-xs text-slate-500">{store.email}</div>
                   <div className="mt-1 text-xs text-slate-600">#{store.id} • {new Date(store.createdAt).toLocaleDateString("ar-EG")}</div>
                 </td>
