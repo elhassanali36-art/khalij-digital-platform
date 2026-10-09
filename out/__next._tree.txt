@@ -1,3 +1,3 @@
-:HL["/khalij-digital-platform/_next/static/chunks/2yxt4cdz4sjxr.css","style"]
-1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"4MgijhalJlFgI7SndjT6X","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+:HL["/khalij-digital-platform/_next/static/chunks/2irz1d4-4hcrx.css","style"]
+1:[["children",{"s":"__PAGE__","h":128}]]
+0:{"b":"ZppN1W6-iC0Rzq-EXM3d2","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
