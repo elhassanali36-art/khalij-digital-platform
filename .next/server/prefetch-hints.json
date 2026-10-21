@@ -3,8 +3,13 @@
     "hints": 64,
     "slots": {
       "children": {
-        "hints": 160,
-        "slots": null
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
       }
     }
   },
@@ -42,6 +47,20 @@
     }
   },
   "/admin": {
+    "hints": 0,
+    "slots": {
+      "children": {
+        "hints": 64,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "/agent": {
     "hints": 0,
     "slots": {
       "children": {

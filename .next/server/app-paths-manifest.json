@@ -1,8 +1,9 @@
 {
-  "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
   "/admin/catalog/page": "app/admin/catalog/page.js",
   "/admin/page": "app/admin/page.js",
+  "/agent/page": "app/agent/page.js",
   "/checkout/page": "app/checkout/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/page": "app/page.js",

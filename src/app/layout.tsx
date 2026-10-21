@@ -194,6 +194,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 حساب بائع
               </Link>
               <Link
+                href="/agent"
+                className="rounded-lg bg-violet-500/15 px-3 py-2 font-bold text-violet-300 transition hover:bg-violet-500/25"
+              >
+                🤖 وكيل الإعلان
+              </Link>
+              <Link
                 href="/sell"
                 className="rounded-lg bg-gradient-to-l from-amber-400 to-orange-500 px-4 py-2 font-bold text-slate-950 transition hover:opacity-90"
               >

@@ -1,8 +1,9 @@
 {
-  "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/_global-error/page": "/_global-error",
   "/admin/catalog/page": "/admin/catalog",
   "/admin/page": "/admin",
+  "/agent/page": "/agent",
   "/checkout/page": "/checkout",
   "/dashboard/page": "/dashboard",
   "/page": "/",
