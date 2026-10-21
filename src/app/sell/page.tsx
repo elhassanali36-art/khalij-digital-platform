@@ -98,8 +98,8 @@ export default function SellPage() {
       setError("اختر ملف المنتج أو أضف رابط تحميل خارجي");
       return;
     }
-    if (productFile && productFile.size > 3 * 1024 * 1024) {
-      setError("حجم الملف أكبر من حد الرفع المباشر (3 ميجابايت). استخدم رابطًا خارجيًا للملفات الأكبر");
+    if (productFile && productFile.size > 70 * 1024 * 1024) {
+      setError("حجم الملف أكبر من حد الرفع المباشر (70 ميجابايت). استخدم رابطًا خارجيًا للملفات الأكبر");
       return;
     }
 
@@ -108,28 +108,76 @@ export default function SellPage() {
       let storagePath: string | null = null;
 
       if (productFile) {
-        setUploadStatus("1/2 جارٍ رفع ملف المنتج إلى المنصة…");
-        const bytes = new Uint8Array(await productFile.arrayBuffer());
-        let binary = "";
-        const chunkSize = 0x8000;
-        for (let i = 0; i < bytes.length; i += chunkSize) {
-          binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
-        }
-        const upRes = await fetch("/api/uploads/store", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            fileName: productFile.name,
-            fileSize: productFile.size,
-            contentType: productFile.type || "application/octet-stream",
-            contentBase64: btoa(binary),
-          }),
+        const CHUNK = 12 * 1024 * 1024; // 12MB per request
+        const totalChunks = Math.ceil(productFile.size / CHUNK);
+        const uploadId =
+          "up-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+        const fileBase64 = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result).split(",")[1]);
+          reader.onerror = () => reject(new Error("تعذر قراءة الملف"));
+          reader.readAsDataURL(productFile);
         });
-        const upData = await upRes.json();
-        if (!upRes.ok) {
-          throw new Error(upData.error ?? "تعذر رفع الملف");
+
+        for (let i = 0; i < totalChunks; i++) {
+          setUploadStatus(
+            `جارٍ رفع ملف المنتج… (${i + 1}/${totalChunks})`
+          );
+          const start = i * CHUNK;
+          const end = Math.min(start + CHUNK, productFile.size);
+          const chunkB64 = fileBase64.slice(
+            Math.floor((start * 4) / 3),
+            Math.ceil((end * 4) / 3)
+          );
+          const upRes = await fetch("/api/uploads/chunk", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              uploadId,
+              fileName: productFile.name,
+              fileSize: productFile.size,
+              contentType: productFile.type || "application/octet-stream",
+              totalChunks,
+              chunkIndex: i,
+              contentBase64: chunkB64,
+            }),
+          });
+          const upData = await upRes.json();
+          if (!upRes.ok) {
+            throw new Error(upData.error ?? `تعذر رفع القطعة ${i + 1}`);
+          }
         }
-        storagePath = upData.path;
+
+        if (totalChunks > 1) {
+          setUploadStatus("جارٍ إنهاء الرفع…");
+          const cRes = await fetch("/api/uploads/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ uploadId }),
+          });
+          const cData = await cRes.json();
+          if (!cRes.ok) {
+            throw new Error(cData.error ?? "تعذر إنهاء الرفع");
+          }
+          storagePath = cData.path;
+        } else {
+          setUploadStatus("جارٍ رفع ملف المنتج…");
+          const upRes = await fetch("/api/uploads/store", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fileName: productFile.name,
+              fileSize: productFile.size,
+              contentType: productFile.type || "application/octet-stream",
+              contentBase64: fileBase64,
+            }),
+          });
+          const upData = await upRes.json();
+          if (!upRes.ok) {
+            throw new Error(upData.error ?? "تعذر رفع الملف");
+          }
+          storagePath = upData.path;
+        }
       }
 
       setUploadStatus("2/2 جارٍ نشر المنتج…");

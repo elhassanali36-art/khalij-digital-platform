@@ -120,6 +120,29 @@ export async function apiDownload(apiPath: string) {
       alert(data?.error || "تعذر تحميل المنتج");
       return;
     }
+    if (data.chunks && data.chunks.length) {
+      const sorted = [...data.chunks].sort((a, b) => a.index - b.index);
+      const parts: ArrayBuffer[] = [];
+      for (const ch of sorted) {
+        const cr = await fetch(ch.url);
+        if (!cr.ok) {
+          alert("تعذر تحميل جزء من الملف، أعد المحاولة");
+          return;
+        }
+        parts.push(await cr.arrayBuffer());
+      }
+      const blob = new Blob(parts, {
+        type: data.contentType || "application/octet-stream",
+      });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = data.fileName || "khalij-product";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+      return;
+    }
     if (data.url) {
       window.open(data.url, "_blank", "noopener,noreferrer");
       return;

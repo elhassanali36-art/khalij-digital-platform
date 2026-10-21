@@ -114,6 +114,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       var data = {};
       try { data = await res.json(); } catch (e) {}
       if (!res.ok) { alert((data && data.error) || "تعذر تحميل المنتج"); return; }
+      if (data.chunks && data.chunks.length) {
+        var parts = [];
+        var sorted = data.chunks.slice().sort(function (a, b) { return a.index - b.index; });
+        for (var ci = 0; ci < sorted.length; ci++) {
+          var cr = await window.fetch(sorted[ci].url);
+          if (!cr.ok) { alert("تعذر تحميل جزء من الملف، أعد المحاولة"); return; }
+          parts.push(await cr.arrayBuffer());
+        }
+        var blobC = new Blob(parts, { type: data.contentType || "application/octet-stream" });
+        var aC = document.createElement("a");
+        aC.href = URL.createObjectURL(blobC);
+        aC.download = data.fileName || "khalij-product";
+        document.body.appendChild(aC);
+        aC.click();
+        aC.remove();
+        URL.revokeObjectURL(aC.href);
+        return;
+      }
       if (data.url) { window.open(data.url, "_blank", "noopener,noreferrer"); return; }
       if (data.contentBase64) {
         var bin = atob(data.contentBase64);
