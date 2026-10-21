@@ -1,10 +1,11 @@
 1:"$Sreact.fragment"
 e:I[7123,[],"default",1]
 :HL["/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","style"]
-2:T13ca,(function () {
+2:T1478,(function () {
   if (window.__khalijBridge) return;
   window.__khalijBridge = true;
   var API_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijApi";
+  var AGENT_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijAgentApi";
   var TOKEN_KEY = "khalij_token";
   window.khalijGetToken = function () {
     try { return window.localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; }
@@ -49,7 +50,8 @@ e:I[7123,[],"default",1]
     var auth = headerValue(init && init.headers, "authorization") || headerValue(init && init.headers, "x-admin-key");
     if (auth && auth.toLowerCase().indexOf("bearer ") === 0) adminKey = auth.slice(7);
     else if (auth) adminKey = auth;
-    var res = await origFetch(API_URL, {
+    var isAgent = path.indexOf("/api/agent/") === 0;
+    var res = await origFetch(isAgent ? AGENT_URL : API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -129,7 +131,7 @@ e:I[7123,[],"default",1]
 b:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$Lc","p":false,"v":null}}]]
 9:[["children",{"s":"edit","h":512,"d":{"r":"$La","p":false,"v":"$8"},"c":"$Qb"}]]
 6:[["children",{"s":"profile","h":512,"d":{"r":"$L7","p":false,"v":"$8"},"c":"$Q9"}]]
-0:{"P":null,"c":["","profile","edit",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$Ld","p":false,"v":null}},"m":"$undefined","G":["$e",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"G7HHeFhGVAblhEf5-ls8D"}
+0:{"P":null,"c":["","profile","edit",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$Ld","p":false,"v":null}},"m":"$undefined","G":["$e",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"UrsXAVJP2aRJl4SdN6mEv"}
 f:"static/chunks/500-fc3b64d9ff4a32a7.js"
 10:"static/chunks/app/layout-580342bb62fa77a4.js"
 11:I[8500,["500","$f","177","$10"],""]

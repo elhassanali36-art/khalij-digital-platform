@@ -41,6 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   if (window.__khalijBridge) return;
   window.__khalijBridge = true;
   var API_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijApi";
+  var AGENT_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijAgentApi";
   var TOKEN_KEY = "khalij_token";
   window.khalijGetToken = function () {
     try { return window.localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; }
@@ -85,7 +86,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     var auth = headerValue(init && init.headers, "authorization") || headerValue(init && init.headers, "x-admin-key");
     if (auth && auth.toLowerCase().indexOf("bearer ") === 0) adminKey = auth.slice(7);
     else if (auth) adminKey = auth;
-    var res = await origFetch(API_URL, {
+    var isAgent = path.indexOf("/api/agent/") === 0;
+    var res = await origFetch(isAgent ? AGENT_URL : API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
