@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 9:I[7123,[],"default",1]
-:HL["/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","style"]
+:HL["/khalij-digital-platform/_next/static/css/efc843a4dc57c1e5.css","style"]
 2:T1478,(function () {
   if (window.__khalijBridge) return;
   window.__khalijBridge = true;
@@ -128,16 +128,16 @@
     } catch (e) { alert("تعذر تحميل المنتج"); }
   };
 })();6:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$L7","p":false,"v":null}}]]
-0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$L8","p":false,"v":null}},"m":"$undefined","G":["$9",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"UrsXAVJP2aRJl4SdN6mEv"}
+0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/efc843a4dc57c1e5.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$L8","p":false,"v":null}},"m":"$undefined","G":["$9",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"PSXUbuiO86QsLWd6taWAX"}
 a:"static/chunks/500-fc3b64d9ff4a32a7.js"
-b:"static/chunks/app/layout-580342bb62fa77a4.js"
+b:"static/chunks/app/layout-d52b17fae5db0115.js"
 c:I[8500,["500","$a","177","$b"],""]
 d:I[7121,[],""]
-e:"static/chunks/app/error-57f59cdb3f92caab.js"
+e:"static/chunks/app/error-0e8dc2f818befd52.js"
 f:I[7267,["500","$a","39","$e"],"default"]
 10:I[4581,[],""]
 11:I[1304,[],"ClientPageRoot"]
-12:"static/chunks/app/page-187a139a5dd70037.js"
+12:"static/chunks/app/page-79d252747d28614e.js"
 13:I[7462,["500","$a","974","$12"],"default"]
 16:I[484,[],"OutletBoundary"]
 17:"$Sreact.suspense"
