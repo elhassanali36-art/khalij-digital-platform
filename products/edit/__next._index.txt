@@ -127,7 +127,7 @@
     } catch (e) { alert("تعذر تحميل المنتج"); }
   };
 })();7:X
-0:{"t":{"t":{"s":"","h":16,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/efc843a4dc57c1e5.css","precedence":"next"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":"$@6","v":null,"s":"$7"}}},"a":"$@8","u":"$@9","b":"wHDCgGG76OxTazTQryVk6"}
+0:{"t":{"t":{"s":"","h":16,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/efc843a4dc57c1e5.css","precedence":"next"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":"$@6","v":null,"s":"$7"}}},"a":"$@8","u":"$@9","b":"Q71gTPp4ZOMdwbcz8NPRD"}
 a:"static/chunks/500-fc3b64d9ff4a32a7.js"
 b:"static/chunks/app/layout-d52b17fae5db0115.js"
 c:I[8500,["500","$a","177","$b"],""]
