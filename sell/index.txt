@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 c:I[7123,[],"default",1]
 :HL["/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","style"]
-2:T165e,(function () {
+2:T16a0,(function () {
   if (window.__khalijBridge) return;
   window.__khalijBridge = true;
   var API_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijApi";
@@ -54,9 +54,10 @@ c:I[7123,[],"default",1]
     else if (auth) adminKey = auth;
     var isAgent = path.indexOf("/api/agent/") === 0;
     var isAgentPay = path.indexOf("/api/agentpay/") === 0;
+    var isConfirmCall = path.indexOf("/api/orders/") === 0 && path.slice(-8) === "/confirm";
     var isGuarded = (path === "/api/orders" && method === "POST")
       || (path === "/api/sellers" && method === "POST")
-      || /^/api/orders/[^/]+/confirm$/.test(path);
+      || isConfirmCall;
     var res = await origFetch(isAgent ? AGENT_URL : (isAgentPay ? AGENTPAY_URL : (isGuarded ? GUARD_URL : API_URL)), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -136,7 +137,7 @@ c:I[7123,[],"default",1]
 })();8:X
 9:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$La","p":false,"v":null}}]]
 6:[["children",{"s":"sell","h":512,"d":{"r":"$L7","p":false,"v":"$8"},"c":"$Q9"}]]
-0:{"P":null,"c":["","sell",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$Lb","p":false,"v":null}},"m":"$undefined","G":["$c",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"8CvnwR8bk7tZui-DT-8nj"}
+0:{"P":null,"c":["","sell",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":false,"v":null},"c":"$Q6"},"h":{"r":"$Lb","p":false,"v":null}},"m":"$undefined","G":["$c",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"trILG8qSQbTICxWd8ZpI-"}
 d:"static/chunks/500-fc3b64d9ff4a32a7.js"
 e:"static/chunks/app/layout-d52b17fae5db0115.js"
 f:I[8500,["500","$d","177","$e"],""]
