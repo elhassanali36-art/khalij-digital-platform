@@ -1,11 +1,12 @@
 1:"$Sreact.fragment"
 :HL["/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","style"]
-2:T1537,(function () {
+2:T165e,(function () {
   if (window.__khalijBridge) return;
   window.__khalijBridge = true;
   var API_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijApi";
   var AGENT_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijAgentApi";
   var AGENTPAY_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijAgentPay";
+  var GUARD_URL = "https://base44.app/api/apps/6a74dc8dc6a9c9d7bc3ef6d1/functions/khalijGuard";
   var TOKEN_KEY = "khalij_token";
   window.khalijGetToken = function () {
     try { return window.localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; }
@@ -52,7 +53,10 @@
     else if (auth) adminKey = auth;
     var isAgent = path.indexOf("/api/agent/") === 0;
     var isAgentPay = path.indexOf("/api/agentpay/") === 0;
-    var res = await origFetch(isAgent ? AGENT_URL : (isAgentPay ? AGENTPAY_URL : API_URL), {
+    var isGuarded = (path === "/api/orders" && method === "POST")
+      || (path === "/api/sellers" && method === "POST")
+      || /^/api/orders/[^/]+/confirm$/.test(path);
+    var res = await origFetch(isAgent ? AGENT_URL : (isAgentPay ? AGENTPAY_URL : (isGuarded ? GUARD_URL : API_URL)), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -129,7 +133,7 @@
     } catch (e) { alert("تعذر تحميل المنتج"); }
   };
 })();7:X
-0:{"t":{"t":{"s":"","h":16,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","precedence":"next"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":"$@6","v":null,"s":"$7"}}},"a":"$@8","u":"$@9","b":"DWOyKSXulEBnT5p87-S-M"}
+0:{"t":{"t":{"s":"","h":16,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/khalij-digital-platform/_next/static/css/4d6254c5f73895c7.css","precedence":"next"}]],["$","html",null,{"lang":"ar","dir":"rtl","children":["$","body",null,{"className":"min-h-screen bg-slate-950 text-slate-100 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}]}]]}],"p":"$@6","v":null,"s":"$7"}}},"a":"$@8","u":"$@9","b":"8CvnwR8bk7tZui-DT-8nj"}
 a:"static/chunks/500-fc3b64d9ff4a32a7.js"
 b:"static/chunks/app/layout-d52b17fae5db0115.js"
 c:I[8500,["500","$a","177","$b"],""]
