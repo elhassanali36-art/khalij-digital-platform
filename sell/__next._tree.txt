@@ -1,4 +1,4 @@
 :HL["/khalij-digital-platform/_next/static/css/efc843a4dc57c1e5.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"sell","h":64,"c":"$Q2"}]]
-0:{"b":"PSXUbuiO86QsLWd6taWAX","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"wHDCgGG76OxTazTQryVk6","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
