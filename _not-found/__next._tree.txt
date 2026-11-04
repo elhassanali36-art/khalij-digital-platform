@@ -1,4 +1,4 @@
-:HL["/khalij-digital-platform/_next/static/css/fb2aa9b1ae031552.css","style"]
+:HL["/khalij-digital-platform/_next/static/css/e58c8510b7e02830.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"_not-found","h":64,"c":"$Q2"}]]
-0:{"b":"MRFUCbTfDBWmX7ov02g9_","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"m2C7oRzGGDd8kMJjwpRJY","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
