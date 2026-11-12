@@ -1,0 +1,4 @@
+:HL["/khalij-digital-platform/_next/static/css/e58c8510b7e02830.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"agent","h":64,"c":"$Q2"}]]
+0:{"b":"m2C7oRzGGDd8kMJjwpRJY","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
